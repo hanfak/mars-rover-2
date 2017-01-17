@@ -1,7 +1,7 @@
 class Plateau
   attr_reader :max_x, :max_y
 
-  def initialize(max_x, max_y)
+  def initialize(max_x = 5, max_y = 5)
     @max_x = check_size(max_x) || max_x
     @max_y = check_size(max_y) || max_y
   end
