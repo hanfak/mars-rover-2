@@ -1,6 +1,8 @@
 require 'coveralls'
 require 'simplecov'
 
+require './lib/plateau.rb'
+
 Coveralls.wear!
 
 SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
