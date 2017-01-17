@@ -2,6 +2,8 @@ require 'coveralls'
 require 'simplecov'
 
 require './lib/plateau.rb'
+require './lib/position.rb'
+
 
 Coveralls.wear!
 
