@@ -20,11 +20,11 @@ describe 'User Stories' do
   it 'User Story 2: Land a rover on plateau' do
     plateau = Plateau.new(5, 9)
     landing_position = Position.new(1, 1)
-    orientation = Orientation.new(:W)
+    orientation = Orientation.new('W')
     rover = Rover.new(landing_position, orientation)
     rover_model = RoverModel.new(rover, plateau)
-    rover_model.move_rover
-    rover_model.get_location_vector
+    # rover_model.create_plateau(5, 9)
+    # rover_model.land_rover(landing_position, orientation)
 
     expect(rover_model.get_location_vector).to eq "1 1 W"
   end
