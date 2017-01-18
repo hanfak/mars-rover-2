@@ -7,8 +7,6 @@ class Orientation
 
   private
     def check_direction(direction)
-      unless ['N','S','E','W'].include? direction
-        raise "Not a direction"
-      end
+      raise "Not a direction" unless ['N','S','E','W'].include? direction
     end
 end
