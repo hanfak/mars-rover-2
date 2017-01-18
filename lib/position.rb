@@ -5,4 +5,8 @@ class Position
     @x_coordinate = x_coordinate
     @y_coordinate = y_coordinate
   end
+
+  def get_position
+    "#{x_coordinate} #{y_coordinate}"
+  end
 end

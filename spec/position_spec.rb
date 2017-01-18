@@ -9,4 +9,10 @@ describe Position do
       expect(position.y_coordinate).to eq 3
     end
   end
+
+  describe 'get_position' do
+    it 'returns string version of position' do
+      expect(position.get_position).to eq "1 3"
+    end
+  end
 end
