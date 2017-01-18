@@ -21,10 +21,8 @@ describe 'User Stories' do
     plateau = Plateau.new(5, 9)
     landing_position = Position.new(1, 1)
     orientation = Orientation.new('W')
-    rover = Rover.new(landing_position, orientation)
+    rover = Rover.new(orientation, landing_position)
     rover_model = RoverModel.new(rover, plateau)
-    # rover_model.create_plateau(5, 9)
-    # rover_model.land_rover(landing_position, orientation)
 
     expect(rover_model.get_location_vector).to eq "1 1 W"
   end

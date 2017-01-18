@@ -1,17 +1,8 @@
 describe Position do
   subject(:position) { described_class.new(1,3) }
+
   describe "instantiation" do
-    it 'has an x coordinate' do
-      expect(position.x_coordinate).to eq 1
-    end
-
-    it 'has an y coordinate' do
-      expect(position.y_coordinate).to eq 3
-    end
-  end
-
-  describe 'get_position' do
-    it 'returns string version of position' do
+    it 'has the following 2D coordinates' do
       expect(position.get_position).to eq "1 3"
     end
   end

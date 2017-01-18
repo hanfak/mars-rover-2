@@ -1,8 +1,17 @@
 class Rover
-  attr_reader :orientation, :landing_position
-
-  def initialize(orientation, landing_position)
+  def initialize(orientation, current_position)
     @orientation = orientation
-    @landing_position = landing_position
+    @current_position = current_position
   end
+
+  def get_current_position
+    current_position.get_position
+  end
+
+  def get_current_direction
+    orientation.direction
+  end
+
+  private
+    attr_reader :orientation, :current_position
 end

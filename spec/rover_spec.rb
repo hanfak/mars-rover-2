@@ -3,14 +3,14 @@ describe Rover do
   let(:landing_position) { double :position, get_position: '1 1' }
 
   subject(:rover) { described_class.new(orientation, landing_position) }
-  
+
   describe 'instantiation' do
     it 'has an orientation when landing' do
-      expect(rover.orientation.direction).to eq 'W'
+      expect(rover.get_current_direction).to eq 'W'
     end
 
     it 'has a position when landing' do
-      expect(rover.landing_position.get_position).to eq '1 1'
+      expect(rover.get_current_position).to eq '1 1'
     end
   end
 end
