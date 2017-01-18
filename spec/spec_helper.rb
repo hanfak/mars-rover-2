@@ -4,6 +4,7 @@ require 'simplecov'
 require './lib/plateau.rb'
 require './lib/position.rb'
 require './lib/orientation.rb'
+require './lib/rover.rb'
 
 
 Coveralls.wear!
