@@ -15,12 +15,14 @@ To Do
 
 This tech test is done using a test driven design approach, with Ruby as the language, and Rspec as the testing framework.
 
-
 ## Approach
 
 ## Issues
 
 ## Technologies used
+
+Ruby 2.2.3
+Rspec 3.5.0
 
 ## Setup
 

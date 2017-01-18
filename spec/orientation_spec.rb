@@ -28,4 +28,38 @@ describe Orientation do
         expect { Orientation.new('K') }.to  raise_error "Not a direction"
     end
   end
+
+  describe '#change_clockwise' do
+    it 'W to N' do
+      orientation = Orientation.new('W')
+
+      orientation.change_clockwise
+
+      expect(orientation.direction).to eq 'N'
+    end
+
+    it 'N to E' do
+      orientation = Orientation.new('N')
+
+      orientation.change_clockwise
+
+      expect(orientation.direction).to eq 'E'
+    end
+
+    it 'E to S' do
+      orientation = Orientation.new('E')
+
+      orientation.change_clockwise
+
+      expect(orientation.direction).to eq 'S'
+    end
+
+    it 'S to W' do
+      orientation = Orientation.new('S')
+
+      orientation.change_clockwise
+
+      expect(orientation.direction).to eq 'W'
+    end
+  end
 end

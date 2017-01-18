@@ -6,6 +6,8 @@ require './lib/position.rb'
 require './lib/orientation.rb'
 require './lib/rover.rb'
 require './lib/rover_model.rb'
+require './lib/move_commands.rb'
+
 
 
 Coveralls.wear!

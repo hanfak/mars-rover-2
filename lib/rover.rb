@@ -12,6 +12,10 @@ class Rover
     orientation.direction
   end
 
+  def turn_right
+    orientation.change_clockwise
+  end
+
   private
     attr_reader :orientation, :current_position
 end

@@ -55,4 +55,13 @@ describe RoverModel do
       rover_model.get_location_vector
     end
   end
+
+  describe '#instruct_to_move' do
+    let(:move_commands) { double :move_commands, instructions: 'R'}
+
+    it 'asks rover to turn right' do
+      expect(rover).to receive(:turn_right)
+      rover_model.instruct_to_move(move_commands)
+    end
+  end
 end

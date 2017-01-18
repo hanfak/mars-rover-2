@@ -8,6 +8,10 @@ class RoverModel
     rover.get_current_position + " " + rover.get_current_direction
   end
 
+  def instruct_to_move(commands)
+     rover.turn_right if commands.instructions == 'R'
+  end
+
   private
     attr_reader :rover, :plateau
 
