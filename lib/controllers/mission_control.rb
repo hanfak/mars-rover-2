@@ -8,10 +8,13 @@ class MissionControl
 
     command_details(instructions).each_slice(2) do |robot_instructions|
       rover_model = rover_model_klass.new(initialize_robot(robot_instructions), plateau_details(instructions))
-
-      rover_model.instruct_to_move(robot_commands(robot_instructions))
-
-      results << rover_model.get_location_vector
+      begin
+        rover_model.instruct_to_move(robot_commands(robot_instructions))
+      rescue Exception => e
+        results << e
+      else
+        results << rover_model.get_location_vector
+      end
     end
 
     results.join("\n")
