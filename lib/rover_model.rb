@@ -12,6 +12,7 @@ class RoverModel
      rover.turn_right if commands.instructions == 'R'
      rover.turn_left if commands.instructions == 'L'
      rover.move_forward if commands.instructions == 'M'
+     check_rover_lies_on_plateau(rover, plateau)
   end
 
   private
@@ -19,11 +20,11 @@ class RoverModel
 
     def check_rover_lies_on_plateau(rover, plateau)
       rover_x_coord, rover_y_coord = rover.get_current_position.split.map(&:to_i)
-      unless rover_x_coord < plateau.max_x &&
-         rover_y_coord < plateau.max_y &&
+      unless rover_x_coord <= plateau.max_x &&
+         rover_y_coord <= plateau.max_y &&
          rover_x_coord > -1 &&
          rover_y_coord > -1
-        raise "Rover has not landed on plateau"
+        raise "Rover is not on plateau"
       end
     end
 end

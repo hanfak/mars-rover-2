@@ -117,5 +117,16 @@ describe 'User Stories' do
 
       expect(rover_model.get_location_vector).to eq "1 0 S"
     end
+
+    it 'Rover moves off the board' do
+      plateau = Plateau.new(5, 9)
+      landing_position = Position.new(1, 0)
+      orientation = Orientation.new('S')
+      rover = Rover.new(orientation, landing_position)
+      rover_model = RoverModel.new(rover, plateau)
+      move_commands = MoveCommands.new('M')
+
+      expect { rover_model.instruct_to_move(move_commands) }.to raise_error "Rover is not on plateau"
+    end
   end
 end
