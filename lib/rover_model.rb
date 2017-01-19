@@ -10,9 +10,7 @@ class RoverModel
 
   def instruct_to_move(commands)
     commands.instructions.each do |command|
-      rover.turn_right if command == 'R'
-      rover.turn_left if command == 'L'
-      rover.move_forward if command == 'M'
+      act_on_command(command)
       check_rover_lies_on_plateau(rover, plateau)
     end
   end
@@ -28,5 +26,11 @@ class RoverModel
         rover_y_coord > -1
         raise "Rover is not on plateau"
       end
+    end
+
+    def act_on_command(command)
+      rover.turn_right if command == 'R'
+      rover.turn_left if command == 'L'
+      rover.move_forward if command == 'M'
     end
 end
