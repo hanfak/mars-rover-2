@@ -59,4 +59,63 @@ describe 'User Stories' do
       expect(rover_model.get_location_vector).to eq "1 1 S"
     end
   end
+
+  # User Story 4
+  #
+  # As a rover driver,
+  # So that I can explore the plateau,
+  # I would like to move the rover in the direction it is facing
+  context 'User Story 4' do
+    it 'Rover can move west' do
+      plateau = Plateau.new(5, 9)
+      landing_position = Position.new(1, 1)
+      orientation = Orientation.new('W')
+      rover = Rover.new(orientation, landing_position)
+      rover_model = RoverModel.new(rover, plateau)
+      move_commands = MoveCommands.new('M')
+
+      rover_model.instruct_to_move(move_commands)
+
+      expect(rover_model.get_location_vector).to eq "0 1 W"
+    end
+
+    it 'Rover can move east' do
+      plateau = Plateau.new(5, 9)
+      landing_position = Position.new(1, 1)
+      orientation = Orientation.new('E')
+      rover = Rover.new(orientation, landing_position)
+      rover_model = RoverModel.new(rover, plateau)
+      move_commands = MoveCommands.new('M')
+
+      rover_model.instruct_to_move(move_commands)
+
+      expect(rover_model.get_location_vector).to eq "2 1 E"
+    end
+
+    it 'Rover can move North' do
+      plateau = Plateau.new(5, 9)
+      landing_position = Position.new(1, 1)
+      orientation = Orientation.new('N')
+      rover = Rover.new(orientation, landing_position)
+      rover_model = RoverModel.new(rover, plateau)
+      move_commands = MoveCommands.new('M')
+
+      rover_model.instruct_to_move(move_commands)
+
+      expect(rover_model.get_location_vector).to eq "1 2 N"
+    end
+
+    it 'Rover can move South' do
+      plateau = Plateau.new(5, 9)
+      landing_position = Position.new(1, 1)
+      orientation = Orientation.new('S')
+      rover = Rover.new(orientation, landing_position)
+      rover_model = RoverModel.new(rover, plateau)
+      move_commands = MoveCommands.new('M')
+
+      rover_model.instruct_to_move(move_commands)
+
+      expect(rover_model.get_location_vector).to eq "1 0 S"
+    end
+  end
 end

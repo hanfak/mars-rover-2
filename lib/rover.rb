@@ -20,6 +20,13 @@ class Rover
     orientation.change_anti_clockwise
   end
 
+  def move_forward
+    current_position.set_x(-1) if get_current_direction == 'W'
+    current_position.set_x(1) if get_current_direction == 'E'
+    current_position.set_y(1) if get_current_direction == 'N'
+    current_position.set_y(-1) if get_current_direction == 'S'
+  end
+
   private
     attr_reader :orientation, :current_position
 end

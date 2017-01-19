@@ -15,6 +15,8 @@ To Do
 
 This tech test is done using a test driven design approach, with Ruby as the language, and Rspec as the testing framework.
 
+## Assumptions
+
 ## Approach
 
 ## Issues

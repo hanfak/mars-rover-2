@@ -11,6 +11,7 @@ class RoverModel
   def instruct_to_move(commands)
      rover.turn_right if commands.instructions == 'R'
      rover.turn_left if commands.instructions == 'L'
+     rover.move_forward if commands.instructions == 'M'
   end
 
   private

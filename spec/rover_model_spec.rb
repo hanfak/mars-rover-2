@@ -72,5 +72,12 @@ describe RoverModel do
       expect(rover).to receive(:turn_left)
       rover_model.instruct_to_move(move_command_turn_left)
     end
+
+    let(:move_command_forward) { double :move_commands, instructions: 'M'}
+
+    it 'asks rover to move forward' do
+      expect(rover).to receive(:move_forward)
+      rover_model.instruct_to_move(move_command_forward)
+    end
   end
 end

@@ -8,6 +8,14 @@ class Position
     "#{x_coordinate} #{y_coordinate}"
   end
 
+  def set_x(displacement)
+    @x_coordinate += displacement
+  end
+
+  def set_y(displacement)
+    @y_coordinate += displacement
+  end
+
   private
     attr_reader :x_coordinate, :y_coordinate
 end
