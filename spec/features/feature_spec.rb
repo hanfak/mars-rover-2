@@ -147,4 +147,6 @@ describe 'User Stories' do
 
     expect(rover_model.get_location_vector).to eq "2 1 S"
   end
+
+
 end

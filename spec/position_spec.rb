@@ -19,6 +19,10 @@ describe Position do
 
       expect(position.get_position).to eq '2 3'
     end
+
+    it 'raises error if argument is not 1 or -1' do
+      expect { position.set_x(5) }.to raise_error 'Can only change by unit amount'
+    end
   end
 
   describe "#set_y" do
@@ -32,6 +36,10 @@ describe Position do
       position.set_y(-1)
 
       expect(position.get_position).to eq '1 2'
+    end
+
+    it 'raises error if argument is not 1 or -1' do
+      expect { position.set_y(-2) }.to raise_error 'Can only change by unit amount'
     end
   end
 end
