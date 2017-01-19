@@ -156,7 +156,7 @@ describe 'User Stories' do
   it 'User Story 6: Move two rovers consecutively' do
     mission_control = MissionControl.new(RoverModel)
     instructions = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM"
-    
+
     actual = mission_control.activate_rovers(instructions)
 
     expect(actual).to eq "1 3 N\n5 1 E"

@@ -80,11 +80,6 @@ As a mission controller,
 So that I can explore different parts of the plateau simultaneously,
 I would like to deploy several rovers at a time
 
-User Story 7
-
-As a mission controller,
-So that I can avoid delays in communicating the several messages,
-I would like to send a set instructions containing everything for the rovers to do
 
 ```
 
