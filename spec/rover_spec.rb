@@ -1,5 +1,5 @@
 describe Rover do
-  let(:orientation) { double :orientation, direction: 'W', change_clockwise: nil}
+  let(:orientation) { double :orientation, direction: 'W', change_clockwise: nil, change_anti_clockwise: nil}
   let(:landing_position) { double :position, get_position: '1 1' }
 
   subject(:rover) { described_class.new(orientation, landing_position) }
@@ -18,6 +18,13 @@ describe Rover do
     it 'asks orientation to set direction clockwise' do
       expect(orientation).to receive(:change_clockwise)
       rover.turn_right
+    end
+  end
+
+  describe '#turn_left' do
+    it 'asks orientation to set direction clockwise' do
+      expect(orientation).to receive(:change_anti_clockwise)
+      rover.turn_left
     end
   end
 end

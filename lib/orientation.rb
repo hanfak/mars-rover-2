@@ -1,14 +1,18 @@
 class Orientation
   attr_reader :direction
 
-  RIGHT_TURNS = { 'W' => 'N', 'N' => 'E', 'E' => 'S', 'S' => 'W' }
+  TURNS = { 'W' => 'N', 'N' => 'E', 'E' => 'S', 'S' => 'W' }
 
   def initialize(direction)
     @direction = check_direction(direction) || direction
   end
 
   def change_clockwise
-    @direction = RIGHT_TURNS[@direction]
+    @direction = TURNS[@direction]
+  end
+
+  def change_anti_clockwise
+    @direction = TURNS.invert[@direction]
   end
 
   private

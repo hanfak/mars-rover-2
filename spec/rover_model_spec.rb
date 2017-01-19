@@ -59,11 +59,18 @@ describe RoverModel do
   end
 
   describe '#instruct_to_move' do
-    let(:move_commands) { double :move_commands, instructions: 'R'}
+    let(:move_command_turn_right) { double :move_commands, instructions: 'R'}
 
     it 'asks rover to turn right' do
       expect(rover).to receive(:turn_right)
-      rover_model.instruct_to_move(move_commands)
+      rover_model.instruct_to_move(move_command_turn_right)
+    end
+
+    let(:move_command_turn_left) { double :move_commands, instructions: 'L'}
+
+    it 'asks rover to turn left' do
+      expect(rover).to receive(:turn_left)
+      rover_model.instruct_to_move(move_command_turn_left)
     end
   end
 end

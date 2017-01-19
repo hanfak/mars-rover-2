@@ -62,4 +62,38 @@ describe Orientation do
       expect(orientation.direction).to eq 'W'
     end
   end
+
+  describe '#change_anticlockwise' do
+    it 'N to W' do
+      orientation = Orientation.new('N')
+
+      orientation.change_anti_clockwise
+
+      expect(orientation.direction).to eq 'W'
+    end
+
+    it 'E to N' do
+      orientation = Orientation.new('E')
+
+      orientation.change_anti_clockwise
+
+      expect(orientation.direction).to eq 'N'
+    end
+
+    it 'S to E' do
+      orientation = Orientation.new('S')
+
+      orientation.change_anti_clockwise
+
+      expect(orientation.direction).to eq 'E'
+    end
+
+    it 'W to S' do
+      orientation = Orientation.new('W')
+
+      orientation.change_anti_clockwise
+
+      expect(orientation.direction).to eq 'S'
+    end
+  end
 end
