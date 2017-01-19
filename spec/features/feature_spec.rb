@@ -148,5 +148,17 @@ describe 'User Stories' do
     expect(rover_model.get_location_vector).to eq "2 1 S"
   end
 
+  # User Story 6
+  #
+  # As a mission controller,
+  # So that I can explore different parts of the plateau simultaneously,
+  # I would like to deploy several rovers at a time
+  it 'User Story 6: Move two rovers consecutively' do
+    mission_control = MissionControl.new(RoverModel)
+    instructions = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM"
+    
+    actual = mission_control.activate_rovers(instructions)
 
+    expect(actual).to eq "1 3 N\n5 1 E"
+  end
 end

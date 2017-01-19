@@ -1,13 +1,13 @@
 require 'coveralls'
 require 'simplecov'
 
-require './lib/plateau.rb'
-require './lib/position.rb'
-require './lib/orientation.rb'
-require './lib/rover.rb'
-require './lib/rover_model.rb'
-require './lib/move_commands.rb'
-
+require './lib/models/plateau.rb'
+require './lib/models/position.rb'
+require './lib/models/orientation.rb'
+require './lib/models/rover.rb'
+require './lib/models/rover_model.rb'
+require './lib/models/move_commands.rb'
+require './lib/controllers/mission_control.rb'
 
 
 Coveralls.wear!
