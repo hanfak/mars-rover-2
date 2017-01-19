@@ -19,8 +19,8 @@ class RoverModel
       rover_x_coord, rover_y_coord = rover.get_current_position.split.map(&:to_i)
       unless rover_x_coord < plateau.max_x &&
          rover_y_coord < plateau.max_y &&
-         rover_x_coord > 0 &&
-         rover_y_coord > 0
+         rover_x_coord > -1 &&
+         rover_y_coord > -1
         raise "Rover has not landed on plateau"
       end
     end

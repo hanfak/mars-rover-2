@@ -7,9 +7,9 @@ describe 'User Stories' do
   # I would like to have a plateau mapped out
   it 'User Story 1: Create plateau' do
     plateau = Plateau.new(5, 9)
-    number_of_positions = plateau.max_x * plateau.max_y
+    number_of_positions = (plateau.max_x + 1) * (plateau.max_y + 1)
 
-    expect(number_of_positions).to eq 45
+    expect(number_of_positions).to eq 60
   end
 
   # User Story 2
