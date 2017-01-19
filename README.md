@@ -2,16 +2,17 @@
 
 ## Contents
 
-Introduction
-Approach
-Issues
-Technologies
-Setup
-User Stories
-How to run
-To Do
+- [Introduction](#introduction)
+- Assumptions
+- Approach
+- Issues
+- Technologies
+- Setup
+- User Stories
+- How to run
+- [To Do](#todo)
 
-## Introduction
+## <a name="introduction">Introduction</a>
 
 This tech test is done using a test driven design approach, with Ruby as the language, and Rspec as the testing framework.
 
@@ -71,7 +72,7 @@ User Story 5
 
 As a rover driver,
 So that I can explore the plateau,
-I would like to give the rover multiple directions to guide it's movement
+I would like to give the rover multiple commands to guide it's movement
 
 User Story 6
 
@@ -89,4 +90,4 @@ I would like to send a set instructions containing everything for the rovers to 
 
 ## How to run
 
-##To Do
+## <a name="introduction">To Do</a>
