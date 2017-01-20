@@ -6,7 +6,6 @@ describe RoverModel do
   subject(:rover_model) { described_class.new(rover, plateau) }
 
   describe 'instantiation' do
-
     subject(:rover_model_0) { described_class }
 
     it "is initialized with a rover and plateau" do
@@ -59,21 +58,21 @@ describe RoverModel do
   end
 
   describe '#instruct_to_move' do
-    let(:move_command_turn_right) { double :move_commands, instructions: ['R']}
+    let(:move_command_turn_right) { double :move_commands, instructions: ['R'] }
 
     it 'asks rover to turn right' do
       expect(rover).to receive(:turn_right)
       rover_model.instruct_to_move(move_command_turn_right)
     end
 
-    let(:move_command_turn_left) { double :move_commands, instructions: ['L']}
+    let(:move_command_turn_left) { double :move_commands, instructions: ['L'] }
 
     it 'asks rover to turn left' do
       expect(rover).to receive(:turn_left)
       rover_model.instruct_to_move(move_command_turn_left)
     end
 
-    let(:move_command_forward) { double :move_commands, instructions: ['M']}
+    let(:move_command_forward) { double :move_commands, instructions: ['M'] }
 
     it 'asks rover to move forward' do
       expect(rover).to receive(:move_forward)
@@ -81,7 +80,7 @@ describe RoverModel do
     end
 
     context 'rover goes off plateau' do
-      let(:rover_5) { double :rover, get_current_direction: 'W', get_current_position: '0 3', move_forward: nil}
+      let(:rover_5) { double :rover, get_current_direction: 'W', get_current_position: '0 3', move_forward: nil }
       subject(:rover_model_5) { described_class.new(rover_5, plateau) }
 
       it 'raises error when rover moves off plateau at zero edge' do
@@ -91,7 +90,7 @@ describe RoverModel do
         end.to raise_error "Rover is not on plateau"
       end
 
-      let(:rover_6) { double :rover, get_current_direction: 'W', get_current_position: '5 3', move_forward: nil}
+      let(:rover_6) { double :rover, get_current_direction: 'W', get_current_position: '5 3', move_forward: nil }
       subject(:rover_model_6) { described_class.new(rover_6, plateau) }
 
       it 'raises error when rover moves off plateau at max coordinate edge' do

@@ -142,7 +142,7 @@ describe 'User Stories' do
     rover = Rover.new(orientation, landing_position)
     rover_model = RoverModel.new(rover, plateau)
     move_commands = MoveCommands.new('RRMMLMLMLM')
-    # 11N,11E, 21E,31E, 31N, 32M, 32W, 22W, 22S, 21S
+
     rover_model.instruct_to_move(move_commands)
 
     expect(rover_model.get_location_vector).to eq "2 1 S"

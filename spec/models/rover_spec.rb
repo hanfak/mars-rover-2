@@ -1,5 +1,5 @@
 describe Rover do
-  let(:orientation) { double :orientation, direction: 'W', change_clockwise: nil, change_anti_clockwise: nil}
+  let(:orientation) { double :orientation, direction: 'W', change_clockwise: nil, change_anti_clockwise: nil }
   let(:current_position) { double :position, get_position: '1 1' }
 
   subject(:rover) { described_class.new(orientation, current_position) }

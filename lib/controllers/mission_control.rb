@@ -6,10 +6,10 @@ class MissionControl
   def activate_rovers(instructions)
     results = []
 
-    command_details(instructions).each_slice(2) do |robot_instructions|
-      rover_model = rover_model_klass.new(initialize_robot(robot_instructions), plateau_details(instructions))
+    command_details(instructions).each_slice(2) do |rover_instructions|
+      rover_model = rover_model_klass.new(initialize_rover(rover_instructions), plateau_details(instructions))
       begin
-        rover_model.instruct_to_move(robot_commands(robot_instructions))
+        rover_model.instruct_to_move(rover_commands(rover_instructions))
       rescue Exception => e
         results << e
       else
@@ -33,17 +33,16 @@ class MissionControl
       instructions.split("\n")[1..-1]
     end
 
-    def initialize_robot(robot_instructions)
-      robot_landing = robot_instructions[0].split
-      robot_position =  robot_landing[0..1].map(&:to_i)
+    def initialize_rover(rover_instructions)
+      rover_landing = rover_instructions[0].split
+      rover_position =  rover_landing[0..1].map(&:to_i)
 
-      landing_position = Position.new(robot_position[0], robot_position[1])
-      orientation = Orientation.new(robot_landing.last)
+      landing_position = Position.new(rover_position[0], rover_position[1])
+      orientation = Orientation.new(rover_landing.last)
       Rover.new(orientation, landing_position)
     end
 
-    def robot_commands(robot_instructions)
-      MoveCommands.new(robot_instructions[1])
+    def rover_commands(rover_instructions)
+      MoveCommands.new(rover_instructions[1])
     end
-
 end

@@ -1,5 +1,5 @@
 describe Plateau do
-  subject(:plateau) { described_class.new(5, 9)}
+  subject(:plateau) { described_class.new(5, 9) }
   subject(:default_plateau) { described_class.new }
 
   describe 'instantiation' do
